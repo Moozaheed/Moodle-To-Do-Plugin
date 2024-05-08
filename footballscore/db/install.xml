@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/footballscore/db" VERSION="20140724" COMMENT="XMLDB file for Moodle local/footballscore"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_footballscore" COMMENT="This table saves information about local footballscore">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="team1" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The description of the team1."/>
+        <FIELD NAME="team2" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The description of the team2."/>
+        <FIELD NAME="goal1" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The format of the description field of the goal1."/>
+        <FIELD NAME="goal2" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The format of the description field of the goal2."/>
+
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for this assignment instance."/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/todolist/db" VERSION="20140724" COMMENT="XMLDB file for Moodle local/todolist"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_todolist" COMMENT="This table saves information about things to do">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="task_title" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="This is the title of a task"/>
+        <FIELD NAME="task_description" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The description of the task"/>
+      </FIELDS>
+
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id" COMMENT="The unique id for every task"/>
+      </KEYS>
+    
+    </TABLE>
+  </TABLES>
+</XMLDB>
