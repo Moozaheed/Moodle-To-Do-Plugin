@@ -22,7 +22,10 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> testing
 // moodleform is defined in formslib.php
 require_once("$CFG->libdir/formslib.php");
 
@@ -41,7 +44,10 @@ class edit_form extends moodleform {
         parent::__construct($actionurl);
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> testing
     // Add elements to form.
     public function definition() {
         global $CFG;
@@ -56,18 +62,27 @@ class edit_form extends moodleform {
         $mform->setType('task_title', PARAM_TEXT);
         $mform->setDefault('task_title', $this->data->task_title ?? ""); // You can set a default value if needed
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> testing
         // Add element for Task Description
         $mform->addElement('textarea', 'task_description', "Task Description");
         $mform->setType('task_description', PARAM_TEXT);
         $mform->setDefault('task_description', $this->data->task_description ?? ""); // You can set a default value if needed
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> testing
         // Set validation rules
         $mform->addRule('task_title', '', 'required', null, 'client');
         $mform->addRule('task_description', '', 'required', null, 'client');
 
         $this->add_action_buttons();
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> testing
 }

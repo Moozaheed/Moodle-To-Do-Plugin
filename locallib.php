@@ -22,9 +22,13 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+<<<<<<< HEAD
 
 function local_todolist_display(){
 
+=======
+function local_todolist_display() {
+>>>>>>> testing
     global $DB, $OUTPUT;
     $alltasks = $DB->get_records('local_todolist');
 
@@ -36,6 +40,7 @@ function local_todolist_display(){
     echo $OUTPUT->render_from_template('local_todolist/manage', $templatecontext);
 }
 
+<<<<<<< HEAD
 
 function local_todolist_init_form(int $id = null): edit_form {
     global $DB;
@@ -56,12 +61,24 @@ function local_todolist_init_form(int $id = null): edit_form {
 
     } else {
         // Initialize the form without any pre-existing record
+=======
+function local_todolist_init_form(int $id = null): edit_form {
+    global $DB;
+
+    $actionurl = new moodle_url('/local/todolist/edit.php');
+
+    if ($id) {
+        $record = $DB->get_record('local_todolist', array('id' => $id));
+        $mform = new edit_form($actionurl, $record);
+    } else {
+>>>>>>> testing
         $mform = new edit_form($actionurl);
     }
 
     return $mform;
 }
 
+<<<<<<< HEAD
 function local_todolist_edit_form(edit_form $mform,int $id=null) {
     global $DB;
     // var_dump($mform->get_data()->id);
@@ -73,19 +90,32 @@ function local_todolist_edit_form(edit_form $mform,int $id=null) {
     //     var_dump($fromform->task_title);
     // die;
         // Handling the form data.
+=======
+function local_todolist_edit_form(edit_form $mform, int $id = null) {
+    global $DB;
+
+    if ($mform->is_cancelled()) {
+        redirect(new moodle_url('/local/todolist/manage.php'));
+    } else if ($fromform = $mform->get_data()) {
+>>>>>>> testing
         $taskdata = new stdClass();
         $taskdata->task_title = $fromform->task_title;
         $taskdata->task_description = $fromform->task_description;
 
+<<<<<<< HEAD
         // var_dump($mform->data);
         // die;
 
         if ($fromform->id) {
             // Update the record.
+=======
+        if ($fromform->id) {
+>>>>>>> testing
             $taskdata->id = $fromform->id;
             $DB->update_record('local_todolist', $taskdata);
             redirect(new moodle_url('/local/todolist/manage.php'));
         } else {
+<<<<<<< HEAD
             // Insert the record.
             $DB->insert_record('local_todolist', $taskdata);
             redirect(new moodle_url('/local/todolist/manage.php'));
@@ -94,5 +124,20 @@ function local_todolist_edit_form(edit_form $mform,int $id=null) {
         // Display success message and redirect
         // You might want to display a success message here before redirecting
         // redirect(new moodle_url('/local/todolist/manage.php'));
+=======
+            $DB->insert_record('local_todolist', $taskdata);
+            redirect(new moodle_url('/local/todolist/manage.php'));
+        }
+    }
+}
+
+function local_todolist_delete_task($id) {
+    global $DB;
+
+    try {
+        $DB->delete_records('local_todolist', array('id' => $id));
+    } catch (Exception $exception) {
+        throw new moodle_exception($exception);
+>>>>>>> testing
     }
 }

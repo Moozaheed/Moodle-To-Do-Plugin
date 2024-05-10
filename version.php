@@ -22,6 +22,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+<<<<<<< HEAD
 
 
  defined('MOODLE_INTERNAL') || die();
@@ -33,3 +34,10 @@
 
  
  
+=======
+defined('MOODLE_INTERNAL') || die();
+
+$plugin->component = 'local_todolist'; // Full name of the plugin (used for diagnostics).
+$plugin->version  = 2022010201;    // The current module version (Date: YYYYMMDDXX).
+$plugin->requires = 2021051704;    // Requires this Moodle version.
+>>>>>>> testing

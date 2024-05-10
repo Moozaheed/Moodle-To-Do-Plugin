@@ -22,8 +22,11 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> testing
 require_once(__DIR__.'/../../config.php');
 require_once('./locallib.php');
 
@@ -35,6 +38,7 @@ try {
 
 $PAGE->set_url(new moodle_url('/local/todolist/manage.php'));
 $PAGE->set_context(\context_system::instance());
+<<<<<<< HEAD
 $PAGE->set_title("Manage To Do List");
 
 echo $OUTPUT->header();
@@ -42,3 +46,13 @@ echo $OUTPUT->header();
 local_todolist_display();
 
 echo $OUTPUT->footer();
+=======
+$PAGE->set_title("To Do List");
+
+echo $OUTPUT->header();
+
+$PAGE->requires->js_call_amd('local_todolist/confirmdelete', 'init', array());
+local_todolist_display();
+
+echo $OUTPUT->footer();
+>>>>>>> testing

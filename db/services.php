@@ -15,18 +15,6 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
-<<<<<<< HEAD
- * Language file.
- *
- * @package    local_footballscore
- * @copyright  2021 Shadman Ahmed
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
-$string['pluginname'] = 'To Do List';
-$string['id'] = 'ID';
-
-=======
  * Version metadata for the local_todolist plugin.
  *
  * @package   local_todolist
@@ -34,16 +22,13 @@ $string['id'] = 'ID';
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-
-$string['pluginname'] = 'To Do List';
-$string['id'] = 'ID';
-$string['createoredit'] = 'Create or Edit a Task';
-$string['updatethanks'] = 'Thanks for updating a record';
-$string['insertthanks'] = 'Thanks for inserting a record';
-$string['deletemessage'] = "The task was deleted successfully!";
-$string['managepagetitle'] = "Manage To Do List";
-$string['deletescore'] = "Delete Task";
-$string['deletetitle'] = "Confirm Delete";
-$string['modalmessage'] = "Do you really want to delete this task?";
-$string['delete'] = "Delete";
->>>>>>> testing
+$functions = array(
+    'local_todolist_delete_task_by_id' => array(
+        'classname'   => 'local_todolist_external',
+        'methodname'  => 'delete_task_by_id',
+        'classpath'   => 'local/todolist/external.php',
+        'description' => 'Delete a single task by id',
+        'type'        => 'write',
+        'ajax'        => true
+    ),
+);
